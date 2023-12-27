@@ -14,13 +14,12 @@ html, body {
     flex-direction: column;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: rgb(246, 246, 246);
+    gap: 0;
 }
 
 p {
-    margin-inline: auto;
-    padding: 10px 24px 10px 24px;
-    text-align: center;
     font-size: large;
+    text-align: center;
 }
 
 #btn-container {
@@ -28,7 +27,7 @@ p {
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
     flex: 1;
-    margin: 24px;
+    margin: 1px 24px 24px 24px;
 }
 button {
     all: unset;
