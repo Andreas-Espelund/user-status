@@ -1,3 +1,5 @@
+const buttons = {'1':'fm', '2':'idle', '3':'ayk'}
+
 // Function to clear all active states
 function clearActiveStates() {
     document.querySelectorAll('#btn-container button').forEach(button => {
@@ -5,39 +7,24 @@ function clearActiveStates() {
     });
 }
 
-// Add event listeners to buttons
-document.getElementById('fm').addEventListener('click', function() {
-    clearActiveStates();
-    this.classList.add('active');
-    // Additional actions for FM
+// Adding event listeners to the buttons
+Object.entries(buttons).forEach(([key, val]) => {
+    const button = document.getElementById(val);
+    if (button) {
+        button.addEventListener('click', function() {
+            clearActiveStates();
+            this.classList.add('active');
+        });
+    }
 });
-
-document.getElementById('idle').addEventListener('click', function() {
-    clearActiveStates();
-    this.classList.add('active');
-    // Additional actions for Idle
-});
-
-document.getElementById('ayk').addEventListener('click', function() {
-    clearActiveStates();
-    this.classList.add('active');
-    // Additional actions for AYK
-});
-
-
 
 // Function to activate button by key
 function activateButtonByKey(key) {
-    const buttons = {
-        '1': document.getElementById('fm'),
-        '2': document.getElementById('idle'),
-        '3': document.getElementById('ayk')
-    };
-
-    if (buttons[key]) {
-        clearActiveStates();
-        buttons[key].classList.add('active');
-    }
+    const buttonId = buttons[key];
+    if (!buttonId) return;
+    clearActiveStates();
+    const button = document.getElementById(buttonId);
+    if (button)button.classList.add('active');
 }
 
 // Add event listener for keydown
