@@ -1,0 +1,60 @@
+body {
+    --accent-color:#6ACB8E;
+    --solid-color: #464646;
+    --background-color: #2d2d2d;
+  }
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: var(--background-color);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+#btn-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    flex: 1;
+    margin: 24px;
+}
+button {
+    box-shadow: #464646;
+    all: unset;
+    font-size: xx-large;
+    text-align: center;
+    border-radius: 8px;
+    padding: 6px 24px 6px 24px;
+    background: var(--solid-color);
+    color: rgb(246, 246, 246);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
+
+button p {
+    font-size: small;
+}
+
+button:hover,button:focus {
+    outline: 2px solid var(--accent-color);
+}
+
+/* Example styles for active button */
+.active {
+    background-color: var(--accent-color);
+    color: var(--solid-color)
+}
+
+
+/* Media query for smaller screens */
+@media (max-width: 400px) { /* Adjust 600px to your preference */
+    #btn-container {
+        grid-template-columns: 1fr; /* Change to 1 column */
+    }   
+}
