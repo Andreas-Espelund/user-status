@@ -1,9 +1,22 @@
 # User status 
 
-## Download and modify the program
+## Get started
 
 ```bash
+# clone the repository
 git clone git@github.com:Andreas-Espelund/user-status.git
+
+# move to the directory (unix)
+cd user_status
+
+# move to the directory (windows)
+dir user_status
+
+# install project dependencies
+npm install
+
+# run the application locally
+npm run start
 ```
 
 ## Main files to change
